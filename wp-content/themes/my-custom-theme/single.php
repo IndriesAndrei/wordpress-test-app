@@ -11,7 +11,10 @@
         <?php
             while (have_posts()):
                 the_post();
-                get_template_part('template-parts/post/content');
+
+                // to get the post type of image, video, etc. 
+                // we use get_post_format and we save the file as content-image.php content-video.php etc.
+                get_template_part('template-parts/post/content', get_post_format());
             endwhile;
 
             // if comments are open, show comments template

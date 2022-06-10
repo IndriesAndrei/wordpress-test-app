@@ -1,0 +1,1 @@
+<h3>Content image type of post</h3>
