@@ -76,7 +76,8 @@ if (!function_exists('mytheme_setup')) {
             Menu options
         */
         register_nav_menus([
-            'primary' => esc_html__('Primary', 'ninestars'),
+            'primary' => esc_html__('Primary', 'wordpress-test-app'),
+            'footer' => esc_html__('Footer Menu', 'wordpress-test-app'),
         ]);
     }   
 }
@@ -91,3 +92,35 @@ function mytheme_content_width() {
     $GLOBALS['content_width'] = apply_filters('mytheme_content_width', 1170);
 }
 add_action('after_setup_theme', 'mytheme_content_width', 0);
+
+/*
+    Register Sidebar widget area
+*/
+function mytheme_sidebar_widgets_init() {
+    register_sidebar([
+        'name' => esc_html__('Sidebar', 'wordpress-test-app'),
+        'id' => 'default-sidebar',
+        'description' => esc_html__('Add widgets here', 'wordpress-test-app'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+    ]);
+}
+add_action('widgets_init', 'mytheme_sidebar_widgets_init');
+
+/**
+ * Enqueue public scripts and styles
+ */
+function mytheme_public_scripts() {
+    
+}
+add_action('wp_enqueue_scripts', 'mytheme_public_scripts');
+
+/**
+ * Enqueue Admin scripts and styles
+ */
+function mytheme_admin_scripts() {
+
+}
+add_action('admin_enqueue_scripts', 'mytheme_admin_scripts');
