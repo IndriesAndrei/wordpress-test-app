@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying all pages
+ * Template for displaying all pages: ex About page
  */
 
  get_header(); ?>
