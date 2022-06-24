@@ -8,3 +8,15 @@ Description: WordPress custom theme development
 Text Domain: mycustomtheme
 License: GNU v3 or later
 **/
+#menu-main-menu {
+    display: flex; 
+}
+
+#menu-main-menu li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+#menu-main-menu a {
+    text-decoration: none;
+}
