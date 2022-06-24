@@ -27,12 +27,6 @@ if (!function_exists('mytheme_setup')) {
         // Add default posts and comments RSS feed links to head
         add_theme_support('automatic-feed-links');
 
-        /* Let WP manage the document title
-            - by adding theme support, we declare that this theme does not use a hard-coded
-            <title> tag in the document head, and expect WP to provide it for us
-        */
-        add_theme_support('title-tag');
-
         /*
             Enable support for Post thumbnails
         */
@@ -62,16 +56,7 @@ if (!function_exists('mytheme_setup')) {
         */
         add_theme_support('customize-selective-refresh-widgets');
 
-        /* 
-            Custom logo support
-        */
-        add_theme_support('custom-logo', [
-            'height' => 250,
-            'width' => 250,
-            'flex-width' => true,
-            'flex-height' => true,
-        ]);
-
+      
         /* 
             Custom Page Header support
         */
