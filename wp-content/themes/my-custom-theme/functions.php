@@ -19,20 +19,6 @@ my_custom_theme_instance();
 if (!function_exists('mytheme_setup')) {
     function mytheme_setup() {
         /*
-            Make theme available for translation
-            translations can be filled in the /languages/ directory
-        */
-        load_theme_textdomain('wordpress-test-app', get_template_directory() . '/languages');
-
-        // Add default posts and comments RSS feed links to head
-        add_theme_support('automatic-feed-links');
-
-        /*
-            Enable support for Post thumbnails
-        */
-        add_theme_support('post-thumbnails');
-
-        /*
             Support for custom background
         */
         add_theme_support('custom-background', apply_filters('wordpress_custom_background_args', [
@@ -40,23 +26,6 @@ if (!function_exists('mytheme_setup')) {
             'default-image' => '',
         ]));
 
-        /*
-            HTML5 support
-        */
-        add_theme_support('html5', [
-            'search-form',
-            'comment-form',
-            'comment-list',
-            'gallery',
-            'caption',
-        ]);
-
-        /*
-            Add theme support for selection refresh for widgets
-        */
-        add_theme_support('customize-selective-refresh-widgets');
-
-      
         /* 
             Custom Page Header support
         */
@@ -72,14 +41,6 @@ if (!function_exists('mytheme_setup')) {
             Add Post Type support
         */
         add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
-    
-        /* 
-            Menu options
-        */
-        register_nav_menus([
-            'primary' => esc_html__('Primary', 'wordpress-test-app'),
-            'footer' => esc_html__('Footer Menu', 'wordpress-test-app'),
-        ]);
     }   
 }
 add_action('after_setup_theme', 'mytheme_setup');
