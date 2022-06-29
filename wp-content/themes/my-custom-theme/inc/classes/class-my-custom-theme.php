@@ -14,8 +14,10 @@ class MY_CUSTOM_THEME {
     {
         // load other classes and check trait-singleton.php file
         // if not instantiated, will instantiate those classes
+        // calling Assets, Menus and Meta_Boxes classes
         Assets::get_instance();
         Menus::get_instance();
+        Meta_Boxes::get_instance();
 
         $this->setup_hooks();
     }
@@ -76,6 +78,11 @@ class MY_CUSTOM_THEME {
             'script',
             'style',
         ]);
+
+        /**
+         * Register image sizes
+         */
+        add_image_size('featured-thumbnail', 350, 232, true);
 
         // attach the stylesheet to the TinyMCE editor (default editor-style.css)
         add_editor_style();

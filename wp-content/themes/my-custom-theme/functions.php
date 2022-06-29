@@ -9,6 +9,7 @@ if (!defined('MY_CUSTOM_THEME_DIR_URI')) {
 }
 
 require_once MY_CUSTOM_THEME_DIR_PATH . '/inc/helpers/autoloader.php';
+require_once MY_CUSTOM_THEME_DIR_PATH . '/inc/helpers/template-tags.php';
 
 function my_custom_theme_instance() {
     // call the get_instance method of the Singleton

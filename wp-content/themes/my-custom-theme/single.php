@@ -15,7 +15,7 @@
 
                     // to get the post type of image, video, etc. 
                     // we use get_post_format and we save the file as content-image.php content-video.php etc.
-                    get_template_part('template-parts/post/content', get_post_format());
+                    get_template_part('template-parts/post/entry-content', get_post_format());
                 endwhile;
             endif;
 
